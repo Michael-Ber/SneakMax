@@ -1,0 +1,124 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: $main-color;
+    height: $header-height;
+    border-bottom: 1px solid rgba($white, .5);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 45px;
+        width: 100%;
+    }
+
+    &__logo {
+        order: 1;
+    }
+
+    &__logo-svg {
+        width: 145px;
+        height: 24px;
+        use {
+            fill: $white;
+        }
+        @include mobile {
+            width: 100px;
+
+        }
+    }
+
+    &__nav {
+        color: $white;
+        order: 3;
+    }
+
+    &__nav-list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__nav-name {
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__nav-item {
+        transition: .3s color ease-in-out;
+        &:hover {
+            color: $orange
+        }
+        @include desktop-md {
+            display: none;
+        }
+        &_cart {
+            @include desktop-md {
+                display: block;
+            }
+        }
+    }
+
+    &__nav-link {
+        &_cart {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    &__cart-svg {
+        width: 20px;
+        height: 19px;
+        use {
+            fill: currentColor;
+        }
+    }
+
+    &__cart-amount {
+        position: absolute;
+        top: 8px;
+        right: -8px;
+        font-size: 12px;
+        font-weight: 400;
+        width: 16px;
+        height: 16px;
+        background: $orange;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: $white;
+    }
+}
+.logo {
+    use {
+        transition: .3s fill ease-in-out;
+    }
+    cursor: pointer;
+    &:hover {
+        use {
+            fill: $orange;
+        }
+    }
+}
+.nav {
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
+.burger {
+    @include burger;
+    order: 2;
+}

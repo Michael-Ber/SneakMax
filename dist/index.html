@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SneakMax</title>
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body class="page__body">
+    <div class="site-container">
+        <header class="header">
+    <div class="container header__container">
+        <a href="#" class="header__logo logo">
+            <svg class="header__logo-svg">
+              <use xlink:href="assets/svg/sprite.svg#logo"></use>
+            </svg>
+        </a>
+        <nav class="nav header__nav" title="Site Navigation">
+          <ul class="list-reset nav__list header__nav-list">
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Каталог</a></li>
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">О нас</a></li>
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Подбор товара</a></li>
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Наша команда</a></li>
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Доставка и оплата</a></li>
+            <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Контакты</a></li>
+            <li class="nav__item header__nav-item header__nav-item_cart">
+                <a href="#" class="header__nav-link header__nav-link_cart nav__link">
+                    <span class="header__nav-name">Корзина</span>
+                    <svg class="header__cart-svg">
+                        <use xlink:href="assets/svg/sprite.svg#cart"></use>
+                      </svg>
+                      <span class="header__cart-amount">1</span>
+                </a>
+                
+            </li>
+          </ul>
+        </nav>
+        <div class="burger" title="Burger Menu">
+           <button class="burger__btn" aria-label="Открыть меню" aria-expanded="false">
+             <span class="burger__line"></span>
+             <span class="burger__line"></span>
+             <span class="burger__line"></span>
+           </button>
+           <div class="burger__menu" aria-hidden="true">
+             <nav class="burger__nav" title="Burger Menu">
+               <ul class="burger__list">
+                 <li class="burger__item"><a href="#" class="burger__link">Каталог</a></li>
+                 <li class="burger__item"><a href="#" class="burger__link">О нас</a></li>
+                 <li class="burger__item"><a href="#" class="burger__link">Подбор товара</a></li>
+                 <li class="burger__item"><a href="#" class="burger__link">Наша команда</a></li>
+                 <li class="burger__item"><a href="#" class="burger__link">Доставка и оплата</a></li>
+                 <li class="burger__item"><a href="#" class="burger__link">Контакты</a></li>
+               </ul>
+             </nav>
+            </div>
+         </div>
+    </div>
+</header>
+        <main class="main">
+            <section class="hero">
+    <div class="container hero__container">
+        <div class="hero__body">
+            <h1 class="hero__title">Кроссовки известных брендов 
+                с доставкой по России и СНГ</h1>
+            <h2 class="hero__subtitle">Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и многие другие по низким ценам</h2>
+            <a href="#" class="btn btn_orange hero__btn">Перейти к покупкам</a>
+        </div>
+    </div>
+</section>
+            <section class="section-offset catalog">
+    <div class="container catalog__container grid">
+        <h2 class="section-title catalog__title">Каталог</h2>
+        <aside class="catalog__parameters parameters-catalog">
+            <h3 class="parameters-catalog__title">Подбор
+                по параметрам</h3>
+            <form action="#" class="parameters-catalog__form form">
+                <div class="parameters-catalog__cost">
+                    <h4 class="parameters-catalog__cost-title parameters-catalog-title">Цена, руб</h4>
+                    <div class="parameters-catalog__cost-inputs">
+                        <input type="number" id="slider-input-1" class="input-reset parameters-catalog__cost-input">
+                        <input type="number" id="slider-input-2" class="input-reset parameters-catalog__cost-input">
+                    </div>
+                </div>
+                <div class="parameters-catalog__slider" id="slider"></div>
+                <div class="parameters-catalog__gender">
+                    <h4 class="parameters-catalog-title parameters-catalog__gender-title">Пол</h4>
+                    <div class="parameters-catalog__gender-wrapper">
+                        <label class="parameters-catalog__gender-label">
+                            <input type="checkbox" class="parameters-catalog__gender-checkbox">
+                            <svg class="parameters-catalog__gender-svg">
+                              <use xlink:href="assets/svg/sprite.svg#ok"></use>
+                            </svg>
+                            мужской
+                        </label>
+                        <label class="parameters-catalog__gender-label">
+                            <input type="checkbox" class="parameters-catalog__gender-checkbox">
+                            <svg class="parameters-catalog__gender-svg">
+                              <use xlink:href="assets/svg/sprite.svg#ok"></use>
+                            </svg>
+                            женский
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="parameters-catalog__size">
+                    <h4 class="parameters-catalog-title parameters-catalog__size-title">Размер</h4>
+                    <div class="parameters-catalog__size-grid">
+                        <input type="number" value="35" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="36" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="37" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="38" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="39" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="40" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="41" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="42" readonly class="input-reset parameters-catalog__size-item">
+                        <input type="number" value="43" readonly class="input-reset parameters-catalog__size-item">
+                    </div>
+                </div>
+                <button class="btn-reset btn btn_gray parameters-catalog__apply">Применить</button>
+                <button class="btn-reset btn btn_transparent parameters-catalog__reset">сбросить</button>
+            </form>
+        </aside>
+        <div class="catalog__right">
+            <div class="catalog__cards cards-catalog">
+                <article class="good-card catalog__card catalog__card--1">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--2">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--3">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--4">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--5">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--6">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--7">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--8">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+                <article class="good-card catalog__card catalog__card--9">
+                    <img loading="lazy" src="./assets/img/webp/sneakers.webp" class="catalog__card-img" width="280" height="293" alt="Кроссовки Nike Air Force 1 '07 QS">
+                    <h4 class="good-card__name catalog__card-name">Кроссовки Nike Air Force 1 '07 QS</h4>
+                    <h5 class="good-card__cost catalog__card-cost"><span class="good-card__cost-value">11 000</span> p</h5>
+                </article>
+            </div>
+            <button class="btn btn-reset btn_orange cards-catalog__btn">Показать еще</button>
+        </div>
+        
+    </div>
+</section>
+        </main>
+        <footer class="footer">
+    
+</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+.catalog {
+
+    &__container {
+        align-items: flex-start
+    }
+
+    &__title {
+        @include bold;
+        grid-column: 1 / span 4;
+        margin: 0 auto 0 0;
+        @include tablet {
+            grid-column: span 12;
+            margin: 0 auto;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__parameters {
+        grid-column: 1 / span 3;
+        background: $sec-bg;
+        align-self: flex-start;
+        @include desktop-md {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column: 1 / span 4;
+        }
+        @include tablet {
+            display: none;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__right {
+        grid-column: span 9;
+        @include desktop-md {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column: 6/ span 7;
+        }
+        @include tablet {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+            justify-content: center;
+            grid-column: span 12;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+        @include desktop-md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include tablet {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+            justify-content: center;
+        }
+    }
+
+    &__card {
+        justify-self: center;
+    }
+
+    &__card--1 {
+    }
+
+    &__card-img {
+        margin-bottom: 10px;
+    }
+
+    &__card-name {
+        padding-bottom: 10px;
+    }
+
+    &__card-cost {
+        @include regular;
+        font-size: 20px;
+    }
+}
+
+.cards-catalog {
+    &__btn {
+        width: 200px;
+        height: 60px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.parameters-catalog {
+    padding: 20px;
+
+    &__title {
+        font-size: 24px;
+        line-height: 110%;
+        padding-bottom: 20px;
+    }
+
+    &__form {
+    }
+
+    &__cost {
+        margin-bottom: 20px;
+    }
+
+    &__cost-title {
+    }
+
+    &__cost-inputs {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        padding-top: 17px;
+        border: 1px solid $gray;
+        border-bottom: none;
+        border-radius: 4px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            transform: translateX(-50%);
+            background: $gray;
+        }
+    }
+
+    &__cost-input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        background-color: $sec-bg;
+        outline: none;
+        max-width: 50px;
+    }
+
+    
+    &__slider {
+        margin-bottom: 30px;
+    }
+
+    &__gender {
+        margin-bottom: 20px;
+    }
+
+    &__gender-title {
+    }
+
+    &__gender-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    &__gender-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        user-select: none;
+        cursor: pointer;
+        &::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border: 1px solid $text-sm;
+            border-radius: 4px;
+        }
+    }
+
+    &__gender-checkbox {
+        // width: 100%;
+        
+        appearance: none;
+        &:checked {
+            & + .parameters-catalog__gender-svg {
+                display: block;
+            }
+        }
+    }
+
+    &__gender-svg {
+        display: none;
+        position: absolute;
+        left: 5px;
+        width: 15px;
+        height: 15px;
+        use {
+            fill: $text-sm
+        }
+    }
+
+    &__size {
+        margin-bottom: 20px;
+    }
+
+    &__size-title {
+    }
+
+    &__size-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 57px;
+        border: 1px solid $text-sm;
+    }
+
+    &__size-item {
+        padding-left: calc(50% - 10px);
+        background: $sec-bg;
+        border: 1px solid $text-sm;
+        width: 100%;
+        cursor: pointer;
+        &:focus {
+            outline: 1px $main-color;
+            outline-style: auto;
+        }
+    }
+
+    &__apply {
+        width: 100%;
+        height: 60px;
+    }
+
+    &__reset {
+        width: 100%;
+        height: 60px;
+    }
+}
+.parameters-catalog-title {
+    padding-bottom: 10px;
+}
+.good-card {
+
+    &__name {
+    }
+
+    &__cost {
+    }
+
+    &__cost-value {
+    }
+}
+
+.noUi-origin .noUi-handle {
+    
+    &:before, &:after {
+        display: none;
+    }
+}
+
+.noUi-horizontal .noUi-origin .noUi-handle {
+    border: 1px solid $sec-bg;
+    border-radius: 4px;
+    width: 6px;
+    height: 20px;
+    right: 0;
+    top: -9px;
+    background: $text;
+    box-shadow: none;
+    cursor: pointer;
+}
+.noUi-horizontal .noUi-origin .noUi-handle-lower {
+    right: -6px;
+}
+.noUi-connects .noUi-connect {
+    height: 2px;
+    background: $text;
+}
+
+.parameters-catalog__form .noUi-target{
+    box-shadow: none;
+    border: none;
+    background: $gray;
+    height: 2px;
+}

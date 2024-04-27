@@ -1,0 +1,66 @@
+.about {
+    color: $white;
+    &__wrapper {
+        background: url('../assets/img/about-figure.svg') top left no-repeat, $main-color;
+        background-size: 28%;
+        @include tablet-sm {
+            padding-top: 50px;
+            background-size: 40%;
+        }
+    }
+
+    &__left {
+        grid-column: 1 / span 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include tablet-sm {
+            grid-column: span 4;
+            padding: 0 30px;
+        } 
+        @include mobile {
+            grid-column: span 4;
+            padding: 0 10px;
+        } 
+    }
+
+    &__title {
+        padding-bottom: 20px;
+        @include tablet-sm {
+            text-align: center;
+        } 
+    }
+
+    &__text {
+        margin: 0;
+        padding-bottom: 20px;
+        @include tablet-sm {
+            text-align: center;
+        } 
+    }
+
+    &__signature {
+        @include bold;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        align-self: flex-end;
+        font-size: 20px;
+        &::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: $white;
+        }
+    }
+
+    &__right {
+        grid-column: span 7;
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__img {
+    }
+}

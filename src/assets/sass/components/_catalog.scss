@@ -67,8 +67,6 @@
         justify-self: center;
     }
 
-    &__card--1 {
-    }
 
     &__card-img {
         margin-bottom: 10px;
@@ -101,14 +99,9 @@
         padding-bottom: 20px;
     }
 
-    &__form {
-    }
 
     &__cost {
         margin-bottom: 20px;
-    }
-
-    &__cost-title {
     }
 
     &__cost-inputs {
@@ -158,9 +151,6 @@
         margin-bottom: 20px;
     }
 
-    &__gender-title {
-    }
-
     &__gender-wrapper {
         display: flex;
         justify-content: space-between;
@@ -184,7 +174,6 @@
     }
 
     &__gender-checkbox {
-        // width: 100%;
         
         appearance: none;
         &:checked {
@@ -209,8 +198,6 @@
         margin-bottom: 20px;
     }
 
-    &__size-title {
-    }
 
     &__size-grid {
         display: grid;
@@ -243,17 +230,6 @@
 }
 .parameters-catalog-title {
     padding-bottom: 10px;
-}
-.good-card {
-
-    &__name {
-    }
-
-    &__cost {
-    }
-
-    &__cost-value {
-    }
 }
 
 .noUi-origin .noUi-handle {

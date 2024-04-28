@@ -136,11 +136,17 @@
     min-height: 399px;
     max-width: 655px;
     padding: 40px;
-    &__img {
+    &__images {
         position: absolute;
         left: calc(100% - 25px);
         top: -5px;
-        min-height: 411px;
+        height: 411px;
+        width: 205px;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        // position: absolute;
     }
     &__title, &__subtitle {
         color: $white;
@@ -166,5 +172,60 @@
     }
     &__btn {
         width: 220px;height: 60px;
+    }
+
+    &__success{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        &_visible {
+            display: flex;
+        }
+    }
+
+    &__svg {
+        position: relative;
+        width: 32px;
+        height: 25px;
+        use {
+            fill: #0e5a4c;
+        }
+    }
+
+    &__sent {
+        @include regular;
+        position: relative;
+        font-size: 24px;
+        line-height: 140%;
+        color: #0e5a4c;
+        
+    }
+
+    &__screen {
+        position: absolute;
+        top: -18px;
+        left: 0;
+        transform: scale(.9);
+    }
+    
+
+    &__spinner {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &_visible {
+            display: block;
+        }
     }
 }

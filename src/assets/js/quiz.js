@@ -1,3 +1,5 @@
+import { send } from "./sendRequest.js";
+
 export const quizData = [
     {
         "name": "name",
@@ -146,7 +148,19 @@ export const quiz = (data) => {
                 <h2 class="section-title choose__title">Ваша подборка готова!</h2>
                 <h3 class="choose__subtitle">Оставьте свои контактные данные, чтобы бы мы могли отправить  подготовленный для вас каталог</h3>
                 <form action="#" class="quiz__final final-quiz">
-                    <img loading="lazy" src="./assets/img/webp/iphone.webp" class="final-quiz__img" width="205" height="411" alt="Iphone">
+                    <div class="final-quiz__images">
+                        <img loading="lazy" src="./assets/img/webp/iphone.webp" class="final-quiz__img" width="205" height="411" alt="Iphone">
+                        <img loading="lazy" src="../assets/img/spinner.gif" class="final-quiz__spinner">
+                        
+                        <div class="final-quiz__success">
+                            <img loading="lazy" src="../assets/img/screen-success.svg" class="final-quiz__screen">
+                            <svg class="final-quiz__svg">
+                                <use xlink:href="assets/svg/sprite.svg#ok"></use>
+                            </svg>
+                            <span class="final-quiz__sent">Отправлено</span>
+                        </div>
+                        
+                    </div>
                     <h4 class="final-quiz__title">Получить предложение</h4>
                     <h5 class="final-quiz__subtitle">Получите подборку подходящих для вас моделей на почту</h5>
                     <input type="text" name="name" required class="final-quiz__input" placeholder="Ваше имя">
@@ -161,6 +175,7 @@ export const quiz = (data) => {
     quiz.addEventListener('click', function(e) {
         const quizBtnNext = document.getElementById('quiz-btn-next');
         const quizInputs = quiz.querySelectorAll('.quiz-field');
+        
         
         switch(e.target.tagName) {
             case 'INPUT': 
@@ -201,25 +216,32 @@ export const quiz = (data) => {
 
     const sendData = (data, quiz) => {
         const form = quiz.querySelector('.final-quiz');
+        const inputs = quiz.querySelectorAll('.final-quiz__input');
+        const spinner = quiz.querySelector('.final-quiz__spinner');
+        const successScreen = quiz.querySelector('.final-quiz__success');
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            const resp = fetch('../mailer/smart.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=UTF-8'
-                },
-                body: data
+            spinner.classList.add('final-quiz__spinner_visible');
+            let dataObj = {data};
+            inputs.forEach(input => {
+                dataObj = {...dataObj, [input.name]: input.value}
             })
-            resp.then(res => res.json)
-            resp.then(res => console.log(res))
+            const resp = send('../mailer/smart.php', dataObj)
+            resp.then(() => {
+                inputs.forEach(input => input.value = '');
+                spinner.classList.remove('final-quiz__spinner_visible');
+                successScreen.classList.add('final-quiz__success_visible');
+                setTimeout(() => {
+                    successScreen.classList.remove('final-quiz__success_visible');
+                }, 5000)
+            })
             resp.catch(e => console.log(e))
         })
     } 
 
     const nextEnable = (inputs, btnNext) => {
         let isValid = false;
-        console.log(step, data.length)
         if(step < data.length-1) {
             switch(Array.from(inputs)[0].type) {
                 case 'checkbox': 

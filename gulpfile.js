@@ -186,7 +186,7 @@ gulp.task("scriptsBackend", () => {
 
 
 gulp.task('images', function () {
-  return gulp.src(['./src/assets/img/**/**.{jpg,jpeg,png,svg}'])
+  return gulp.src(['./src/assets/img/**/**.{jpg,jpeg,png,svg,gif}'])
     .pipe(gulpif(isProd, imagemin([
       mozjpeg({
         quality: 80,
@@ -195,6 +195,7 @@ gulp.task('images', function () {
       optipng({
         optimizationLevel: 2
       }),
+      gifsicle({interlaced: true})
     ])))
     // .pipe(gulp.dest('../../../js/OpenServer/domains/portfolio/assets/img'));
     .pipe(gulp.dest('./dist/assets/img'));

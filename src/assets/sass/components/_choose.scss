@@ -2,14 +2,23 @@
     &__container {
         background: $sec-bg;
         padding: 40px 100px;
+        @include tablet {
+            padding: 40px 20px;
+        }
     }
     &__body {
         grid-column: 1 / span 12;
+        @include tablet-sm {
+            grid-column: 1 / span 4;
+        }
     }
 
     &__title {
         color: $text;
         padding-bottom: 20px;
+        @include tablet-sm {
+            text-align: center;
+        }
     }
 
     &__subtitle {
@@ -17,6 +26,9 @@
         padding-bottom: 10px;
         border-bottom: 1px solid $text-light;
         margin-bottom: 20px;
+        @include tablet-sm {
+            text-align: center;
+        }
     }
 
     &__quiz {
@@ -29,22 +41,31 @@
     }
 
     &__question-title {
-        font-size: 24px;
+        font-size: clamp(14px, 3vw, 24px);
         color: $text;
         margin-bottom: 20px;
+        @include tablet-sm {
+            text-align: center;
+        }
     }
     &__question-wrapper {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        // justify-content: space-between;
+        gap: clamp(20px, 3vw, 70px);
         margin-bottom: 40px;
+        @include tablet-sm {
+            justify-content: center;
+        }
     }
     &__question-img {
         margin-bottom: 10px;
     }
     &__question-item {
-        grid-column: span 3;
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
     }
     &__question-label {
         position: relative;
@@ -71,7 +92,7 @@
         }
     }
     &__question-textarea {
-        width: 465px;
+        width: calc(min(465px, 80vw));
         height: 246px;
         resize: none;
         padding: 20px;
@@ -134,19 +155,33 @@
     flex-direction: column;
     background: $text-sm;
     min-height: 399px;
-    max-width: 655px;
+    width: clamp(300px, 60vw, 655px);
     padding: 40px;
+    @include tablet-sm {
+        padding: 25px;
+    }
+    @include mobile {
+        width: 100%;
+        gap: 20px;
+    }
     &__images {
         position: absolute;
         left: calc(100% - 25px);
         top: -5px;
         height: 411px;
         width: 205px;
+        @include mobile {
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
     }
     &__img {
         width: 100%;
         height: 100%;
-        // position: absolute;
+        // @include mobile {
+        //     display: none;
+        // }
     }
     &__title, &__subtitle {
         color: $white;
@@ -154,20 +189,21 @@
     &__title {
         @include bold;
         font-weight: 700;
-        font-size: 36px;
+        font-size: clamp(20px, 4vw, 36px);
         line-height: 140%;
     }
     &__input {
-        width: 500px;
+        width: 87%;
         height: 60px;
         padding: 20px;
         line-height: 140%;
+        font-size: clamp(12px, 2vw, 16px);
         &::placeholder {
             color: $gray;
         }
     }
     &__subtitle {
-        font-size: 18px;
+        font-size: clamp(14px, 2vw, 18px);
         line-height: 140%;
     }
     &__btn {
@@ -214,6 +250,9 @@
         top: -18px;
         left: 0;
         transform: scale(.9);
+        // @include mobile {
+        //     display: none;
+        // }
     }
     
 

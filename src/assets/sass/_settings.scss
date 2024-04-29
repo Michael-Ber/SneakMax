@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
     @include bold;
-    font-size: 1.875rem;
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
     font-weight: 700;
     
 }

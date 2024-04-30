@@ -1,0 +1,44 @@
+.team {
+    background: url('../assets/img/team-figure.svg') top right no-repeat, $main-color;
+    background-size: clamp(100px, 40vw, 550px);
+    padding-bottom: 60px;
+    &__title {
+        padding-bottom: 40px;
+        color: $white;
+    }
+
+    &__cards {
+        row-gap: 40px;
+        @include mobile {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    &__card {
+        grid-column: span 4;
+        @include tablet-sm {
+            grid-column: span 2;
+        }
+        @include mobile {
+            grid-column: 2 / span 3;
+        }
+    }
+}
+.card-team {
+
+    &__img {
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    &__name, &__prof {
+        color: $white;
+    }
+
+    &__name {
+        @include bold;
+        font-size: clamp(18px, 2vw, 24px);
+        padding-bottom: 20px;
+    }
+
+}

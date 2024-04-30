@@ -1,0 +1,33 @@
+.questions {
+    padding-bottom: 60px;
+    &__title {
+        padding-bottom: 40px;
+    }
+}
+.questions-accordion {
+    max-width: 880px;
+    margin: 0 auto;
+    &__item {
+        padding-top: 30px;
+        padding-bottom: 18px;
+        border-top: 1px solid $text-dark;
+        &:last-child {
+            border-bottom: 1px solid $text-dark;
+        }
+    }
+
+    &__control {
+        @include regular;
+        background: none;
+        font-weight: 500;
+        font-size: clamp(16px, 3vw, 20px);
+        color: $text-dark;
+    }
+
+    &__content {
+        color: rgba($text-dark, .5);
+        font-size: clamp(14px, 3vw, 16px);
+    }
+
+    
+}

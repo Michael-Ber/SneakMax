@@ -1,0 +1,39 @@
+.footer {
+    background: $text;
+    min-height: 80px;
+    padding: 28px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 45px;
+        @include tablet {
+            justify-content: center;
+        }
+        @include tablet-sm {
+            flex-direction: column;
+        }
+    }
+
+
+    &__nav-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        font-size: 14px;
+        color: $white;
+        @include tablet-sm {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__nav-item {
+        justify-self: center;
+    }
+
+}
+

@@ -19,11 +19,13 @@ export const burger = () => {
                 menu.setAttribute('aria-hidden', true)
             }else {
                 menu.setAttribute('aria-hidden', false)
+                body.style.overflow = 'hidden';
             }
         })
         window.addEventListener('resize', () => {
             menu.classList.remove('burger__menu_active');
             burgerBtn.classList.remove('burger__btn_active');
+            body.style.overflow = 'auto';
         })
         window.addEventListener('scroll', () => {
             if(menu.classList.contains('burger__menu_active')) {

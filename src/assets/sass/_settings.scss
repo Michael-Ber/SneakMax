@@ -124,8 +124,71 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(12, 1fr);
     gap: $grid-gap;
     @include tablet-sm {
-        // column-gap: $grid-gap;
         grid-template-columns: repeat(4, 1fr);
-        // row-gap: 0;
     }
+}
+
+.accordion {
+    &__item {
+        user-select: none;
+        &_active {
+            .accordion__content {
+                visibility: visible;
+                padding-top: 25px;
+            }
+
+        }
+    }
+    &__content {
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: .2s max-height ease-in-out, .2s visibility ease-in-out, .2s padding-top ease-in-out;
+        padding-top: 0;
+    }
+
+    &__control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        
+        
+    }
+    .arrow {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        transition: .3s transform ease-in-out;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $text-dark;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            height: 100%;
+            width: 1px;
+            background: $text-dark;
+        }
+        &_active {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.icon-marker {
+    min-width: 25px;
+    min-height: 35px;
 }

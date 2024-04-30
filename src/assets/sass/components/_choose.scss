@@ -1,4 +1,5 @@
 .choose {
+    padding-bottom: 60px;
     &__container {
         background: $sec-bg;
         padding: 40px 100px;
@@ -31,14 +32,9 @@
         }
     }
 
-    &__quiz {
-    }
+ 
 }
 .quiz {
-
-    &__question {
-        
-    }
 
     &__question-title {
         font-size: clamp(14px, 3vw, 24px);
@@ -50,11 +46,7 @@
     }
     &__question-wrapper {
         display: flex;
-        // justify-content: space-between;
         flex-wrap: wrap;
-        // display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        // justify-content: space-between;
         gap: clamp(20px, 3vw, 70px);
         margin-bottom: 40px;
         @include tablet-sm {
@@ -64,9 +56,7 @@
     &__question-img {
         margin-bottom: 10px;
     }
-    &__question-item {
-        // padding-bottom: 20px;
-    }
+
     &__question-label {
         position: relative;
         display: flex;
@@ -124,8 +114,6 @@
         padding-top: 20px;
     }
 
-    &__indicator {
-    }
 
     &__next {
         width: 211px;
@@ -171,17 +159,18 @@
         height: 411px;
         width: 205px;
         @include mobile {
-            top: 50%;
-            left:50%;
-            transform: translate(-50%, -50%);
+            top: 86%;
+            left:75%;
+            width: unset;
+            height: unset;
         }
     }
     &__img {
         width: 100%;
         height: 100%;
-        // @include mobile {
-        //     display: none;
-        // }
+        @include mobile {
+            display: none;
+        }
     }
     &__title, &__subtitle {
         color: $white;
@@ -207,7 +196,8 @@
         line-height: 140%;
     }
     &__btn {
-        width: 220px;height: 60px;
+        width: clamp(140px, 40vw, 220px);
+        height: 60px;
     }
 
     &__success{
@@ -225,23 +215,27 @@
         &_visible {
             display: flex;
         }
+        @include mobile {
+            height: unset;
+            gap: 10px;
+        }
     }
 
     &__svg {
         position: relative;
-        width: 32px;
+        width: clamp(22px, 5vw, 32px);
         height: 25px;
         use {
-            fill: #0e5a4c;
+            fill: $green;
         }
     }
 
     &__sent {
         @include regular;
         position: relative;
-        font-size: 24px;
+        font-size: clamp(16px, 3vw, 24px);
         line-height: 140%;
-        color: #0e5a4c;
+        color: $green;
         
     }
 
@@ -250,9 +244,9 @@
         top: -18px;
         left: 0;
         transform: scale(.9);
-        // @include mobile {
-        //     display: none;
-        // }
+        @include mobile {
+            display: none;
+        }
     }
     
 
@@ -262,7 +256,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
+        min-width: 50px;
+        min-height: 50px;
         &_visible {
             display: block;
         }

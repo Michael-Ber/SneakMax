@@ -18,17 +18,7 @@
         order: 1;
     }
 
-    &__logo-svg {
-        width: 145px;
-        height: 24px;
-        use {
-            fill: $white;
-        }
-        @include mobile {
-            width: 100px;
 
-        }
-    }
 
     &__nav {
         color: $white;
@@ -48,10 +38,7 @@
     }
 
     &__nav-item {
-        transition: .3s color ease-in-out;
-        &:hover {
-            color: $orange
-        }
+        
         @include desktop-md {
             display: none;
         }
@@ -106,19 +93,30 @@
             fill: $orange;
         }
     }
-}
-.nav {
+    &__svg {
+        width: 145px;
+        height: 24px;
+        use {
+            fill: $white;
+        }
+        @include mobile {
+            width: 100px;
 
-    &__list {
-    }
-
-    &__item {
-    }
-
-    &__link {
+        }
     }
 }
 .burger {
     @include burger;
     order: 2;
+}
+
+
+
+.nav {
+    &__item {
+        transition: .3s color ease-in-out;
+        &:hover {
+            color: $orange
+        }
+    }
 }

@@ -772,6 +772,88 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/assets/js/accordion.js":
+/*!************************************!*\
+  !*** ./src/assets/js/accordion.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   accordion: () => (/* binding */ accordion)
+/* harmony export */ });
+const accordion = () => {
+  try {
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(accordion => {
+      const items = accordion.querySelectorAll('.accordion__item');
+      const controls = accordion.querySelectorAll('.accordion__control');
+      const contents = accordion.querySelectorAll('.accordion__content');
+      const arrows = accordion.querySelectorAll('.arrow');
+      items.forEach(item => {
+        const btn = item.querySelector('.accordion__control');
+        processAccordion(item, accordion, items, 'init');
+        window.addEventListener('resize', () => {
+          processAccordion(item, accordion, items, 'init');
+        });
+        btn.addEventListener('click', () => {
+          resetAccordion(items, controls, contents, arrows, item);
+          processAccordion(item, accordion, items, 'process');
+        });
+      });
+    });
+    function processAccordion(item, accordion, items) {
+      let condition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'process';
+      try {
+        const control = item.querySelector('.accordion__control');
+        const content = item.querySelector('.accordion__content');
+        const arrow = item.querySelector('.arrow');
+        if (condition !== 'init') {
+          item.classList.toggle('accordion__item_active');
+          if (accordion.classList.contains('need-border')) {
+            item.classList.toggle('accordion-item-border');
+          }
+        }
+        if (item.classList.contains('accordion__item_active')) {
+          content.style.maxHeight = content.scrollHeight + 25 + 'px';
+          content.setAttribute('aria-hidden', false);
+          control.setAttribute('aria-expanded', true);
+          arrow.classList.add('arrow_active');
+        } else {
+          content.style.maxHeight = 0 + 'px';
+          content.setAttribute('aria-hidden', true);
+          control.setAttribute('aria-expanded', false);
+          arrow.classList.remove('arrow_active');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    function resetAccordion(items, controls, contents, arrows, item) {
+      if (!item.classList.contains('accordion__item_active')) {
+        items.forEach(item => {
+          item.classList.remove('accordion__item_active');
+          item.classList.remove('accordion-item-border');
+        });
+        controls.forEach(control => {
+          control.setAttribute('aria-expanded', false);
+        });
+        contents.forEach(content => {
+          content.style.maxHeight = 0 + 'px';
+          content.setAttribute('aria-hidden', true);
+        });
+        arrows.forEach(arrow => {
+          arrow.classList.remove('arrow_active');
+        });
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/burger.js":
 /*!*********************************!*\
   !*** ./src/assets/js/burger.js ***!
@@ -802,11 +884,13 @@ const burger = () => {
         menu.setAttribute('aria-hidden', true);
       } else {
         menu.setAttribute('aria-hidden', false);
+        body.style.overflow = 'hidden';
       }
     });
     window.addEventListener('resize', () => {
       menu.classList.remove('burger__menu_active');
       burgerBtn.classList.remove('burger__btn_active');
+      body.style.overflow = 'auto';
     });
     window.addEventListener('scroll', () => {
       if (menu.classList.contains('burger__menu_active')) {
@@ -849,6 +933,80 @@ const form = () => {
   } catch (error) {
     console.log(error);
   }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/map.js":
+/*!******************************!*\
+  !*** ./src/assets/js/map.js ***!
+  \******************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   map: () => (/* binding */ map)
+/* harmony export */ });
+const map = () => {
+  const markerProps = [{
+    iconSrc: "../assets/img/mappoint.svg",
+    coordinates: [30.326142, 59.953139]
+  }, {
+    iconSrc: "../assets/img/mappoint.svg",
+    coordinates: [30.430374, 59.938283]
+  }, {
+    iconSrc: "../assets/img/mappoint.svg",
+    coordinates: [30.361730, 59.929081]
+  }];
+  main();
+  async function main() {
+    // Waiting for all api elements to be loaded
+    await ymaps3.ready;
+    const {
+      YMap,
+      YMapDefaultSchemeLayer,
+      YMapDefaultFeaturesLayer,
+      YMapMarker
+    } = ymaps3;
+
+    // Initialize the map
+    const map = new YMap(
+    // Pass the link to the HTMLElement of the container
+    document.getElementById('map'),
+    // Pass the map initialization parameters
+    {
+      location: {
+        center: [30.361730, 59.929081],
+        zoom: 11
+      },
+      showScaleInCopyrights: true,
+      mode: 'vector'
+    }, [
+    // Add a map scheme layer
+    new YMapDefaultSchemeLayer({}),
+    // Add a layer of geo objects to display the markers
+    new YMapDefaultFeaturesLayer({})]);
+
+    // Create markers with a custom icon and add them to the map
+    markerProps.forEach(markerProp => {
+      const markerElement = document.createElement('img');
+      markerElement.className = 'icon-marker';
+      markerElement.src = markerProp.iconSrc;
+      map.addChild(new YMapMarker({
+        coordinates: markerProp.coordinates
+      }, markerElement));
+    });
+  }
+  const mapImg = document.querySelector('.contacts__map');
+  const modal = document.querySelector('.modal-overlay');
+  mapImg.addEventListener('click', () => {
+    modal.classList.add('modal-overlay_visible');
+  });
+  window.addEventListener('click', e => {
+    if (e.target.classList.contains('modal-overlay')) {
+      modal.classList.remove('modal-overlay_visible');
+    }
+  });
 };
 
 /***/ }),
@@ -3550,6 +3708,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _rangeSlider_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rangeSlider.js */ "./src/assets/js/rangeSlider.js");
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.js */ "./src/assets/js/form.js");
 /* harmony import */ var _quiz_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./quiz.js */ "./src/assets/js/quiz.js");
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./src/assets/js/accordion.js");
+/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./map.js */ "./src/assets/js/map.js");
+
+
 
 
 
@@ -3560,6 +3722,8 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_rangeSlider_js__WEBPACK_IMPORTED_MODULE_1__.rangeSlider)();
   (0,_form_js__WEBPACK_IMPORTED_MODULE_2__.form)();
   (0,_quiz_js__WEBPACK_IMPORTED_MODULE_3__.quiz)(_quiz_js__WEBPACK_IMPORTED_MODULE_3__.quizData);
+  (0,_accordion_js__WEBPACK_IMPORTED_MODULE_4__.accordion)();
+  (0,_map_js__WEBPACK_IMPORTED_MODULE_5__.map)();
 });
 })();
 

@@ -7,14 +7,14 @@
     <title>SneakMax</title>
     <link rel="stylesheet" href="./css/vendor.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="js/script.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=47aa74ff-1f21-488c-a621-f2ac8ece7466&lang=ru_RU"></script>
 </head>
 <body class="page__body">
     <div class="site-container">
         <header class="header">
     <div class="container header__container">
         <a href="#" class="header__logo logo">
-            <svg class="header__logo-svg">
+            <svg class="header__logo-svg logo__svg">
               <use xlink:href="assets/svg/sprite.svg#logo"></use>
             </svg>
         </a>
@@ -280,10 +280,181 @@
         </div>
     </div>
 </section>
+            <section class="section-offset team">
+    <div class="container">
+        <h2 class="section-title team__title">Наша команда</h2>
+        <div class="team__cards grid">
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-1.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-2.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-3.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-4.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-5.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+            <article class="member team__card card-team">
+                <img loading="lazy" src="./assets/img/webp/team-6.webp" class="card-team__img" width="380" height="400" alt="">
+                <h3 class="card-team__name">Максим Золотарев</h3>
+                <h4 class="card-team__prof">Администратор</h4>
+            </article>
+        </div>
+    </div>
+</section>
+            <section class="section-offset questions">
+    <div class="container">
+        <h2 class="section-title questions__title">Часто задаваемые вопросы</h2>
+        <div class="accordion questions-accordion">
+            <div class="accordion__item accordion__item_active questions-accordion__item">
+                <button class="btn-reset accordion__control questions-accordion__control" aria-expanded="false">
+                    Вопрос 1
+                    <span class="arrow"></span>
+                </button>
+                <div class="accordion__content questions-accordion__content" aria-hidden="true">
+                    А это ответ 1: в комплексе функционируют 6 детских садов с площадками, воспитателями и всякими другими людьми
+                </div>
+            </div>
+            <div class="accordion__item questions-accordion__item">
+                <button class="btn-reset accordion__control questions-accordion__control" aria-expanded="false">
+                    Вопрос 2
+                    <span class="arrow"></span>
+                </button>
+                <div class="accordion__content questions-accordion__content" aria-hidden="true">
+                    А это ответ 2: в комплексе функционируют 6 детских садов с площадками, воспитателями и всякими другими людьми
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="section-offset contacts">
+    <div class="container grid">
+        <div class="contacts__left">
+            <h2 class="section-title contacts__title"><span>Контакты</span></h2>
+            <div class="contacts__item item-contacts">
+                <div class="item-contacts__wrapper">
+                    <h3 class="item-contacts__title">Главный офис</h3>
+                    <div class="item-contacts__tooltip-control">
+                        ?
+                        <div class="item-contacts__tooltip-content">
+                            Адрес и телефон для корреспонденции, инвесторов. Вопросы о доставке, качестве обслуживания и товара просьба задавать в отдел продаж
+                        </div>
+                    </div>
+                    
+                </div>
+                <a href="tel:78007898989" target="_blank" class="item-contacts__phone">+7 800 789 89 89</a>
+                <address class="item-contacts__address">г. Санкт-Петербург, Комсомольская, 43 к1</address>
+            </div>
+            <div class="contacts__item item-contacts">
+                <div class="item-contacts__wrapper">
+                    <h3 class="item-contacts__title">отдел продаж</h3>
+                </div>
+                <a href="tel:78007898989" target="_blank" class="item-contacts__phone">+7 800 789 89 89</a>
+                <address class="item-contacts__address">г. Санкт-Петербург, Комсомольская, 43 к1</address>
+            </div>
+
+            <div class="contacts__socials socials">
+                <a href="#" class="socials__link">
+                    <svg class="socials__svg">
+                        <use xlink:href="assets/svg/sprite.svg#vk"></use>
+                      </svg>
+                </a>
+                <a href="#" class="socials__link">
+                    <svg class="socials__svg">
+                        <use xlink:href="assets/svg/sprite.svg#Instagram"></use>
+                      </svg>
+                </a>
+            </div>
+            
+        </div>
+        <div class="contacts__right">
+            <div class="contacts__map">
+                <img loading="lazy" src="./assets/img/webp/map.webp" class="contacts__img" width="680" height="498" alt="г. Санкт-Петербург, Комсомольская, 43 к1">
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="section-offset photos">
+    <div class="container photos__container grid">
+        <form action="#" class="photos__form">
+            <h2 class="section-title photos__title">Есть вопросы?</h2>
+            <h3 class="section-subtitle photos__subtitle">Заполните форму и наш менеджер свяжется с вами</h3>
+
+            <input type="text" name="name" required placeholder="Ваше имя" class="input-reset photos__input">
+            <input type="tel" name="phone" required placeholder="Номер телефона" class="input-reset photos__input">
+            <button type="submit" class="btn-reset btn btn_orange photos__submit">Отправить</button>
+        </form>
+        <div class="photos__instagram">
+            <img loading="lazy" src="./assets/img/webp/instagram.webp" class="photos__instagram-title" width="157" height="56" alt="Надпись инстаграм">
+            <div class="photos__instagram-wrapper">
+                <a href="#" class="photos__instagram-link">
+                    <img loading="lazy" src="./assets/img/webp/questions-1.webp" class="photos__item" width="157" height="161" alt="Ваза с цветами">
+                </a>
+                <a href="#" class="photos__instagram-link photos__instagram-link_dog">
+
+                    <img loading="lazy" src="./assets/img/webp/questions-3.webp" class="photos__item" width="157" height="161" alt="Собака породы хаски">
+                </a>
+                <a href="#" class="photos__instagram-link">
+
+                    <img loading="lazy" src="./assets/img/webp/questions-4.webp" class="photos__item" width="157" height="161" alt="Человек моет посуду">
+                </a>
+                <a href="#" class="photos__instagram-link">
+
+                    <img loading="lazy" src="./assets/img/webp/questions-2.webp" class="photos__item" width="157" height="161" alt="Феерверки">
+                </a>
+                <a href="#" class="photos__instagram-link photos__instagram-link_bus">
+
+                    <img loading="lazy" src="./assets/img/webp/questions-5.webp" class="photos__item" width="157" height="161" alt="Автобусная остановка">
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+            <div class="modal">
+    <div class="modal-overlay">
+        <div class="modal__map" id="map">
+        </div>
+    </div>
+
+</div>
         </main>
         <footer class="footer">
-    
+    <div class="container footer__container">
+        <a href="#" class="footer__logo logo">
+            <svg class="footer__logo-svg logo__svg">
+              <use xlink:href="assets/svg/sprite.svg#logo"></use>
+            </svg>
+        </a>
+        <nav class="nav footer__nav" title="Site Navigation">
+            <ul class="list-reset nav__list footer__nav-list">
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">Каталог</a></li>
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">О нас</a></li>
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">Подбор товара</a></li>
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">Наша команда</a></li>
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">Доставка и оплата</a></li>
+              <li class="nav__item footer__nav-item"><a href="#" class="footer__nav-link nav__link">Контакты</a></li>
+            </ul>
+          </nav>
+    </div>
 </footer>
     </div>
+    
+    <script defer src="js/script.js"></script>
 </body>
 </html>

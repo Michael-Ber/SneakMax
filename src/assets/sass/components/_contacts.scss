@@ -1,0 +1,200 @@
+.contacts {
+    background: #f3f6f6;
+    padding-bottom: 60px;
+    &__left {
+        grid-column: 1 / span 5;
+        @include desktop-md {
+            grid-column: span 12;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 60px;
+    }
+
+    &__item {
+        margin-bottom: 40px;
+    }
+
+    &__socials {
+        @include desktop-md {
+            justify-content: center;
+        }
+    }
+
+    &__right {
+        
+        grid-column: span 7;
+        @include desktop-md {
+            grid-column: span 12;
+            margin: 0 auto;
+        }
+        
+    }
+
+    &__map {
+        position: relative;
+        transition: .3s ;
+        &::after {
+            content: 'На карте';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba($black, .7);
+            opacity: 0;
+            transition: .3s opacity ease-in-out;
+            font-size: clamp(18px, 3vw, 30px);
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+            & > .contacts__see {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__see {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: clamp(18px, 3vw, 30px);
+        color: $white;
+        opacity: 0;
+        z-index: 5;
+        transition: .3s opacity ease-in-out;
+        cursor: pointer;
+    }
+}
+.item-contacts {
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 40px;
+        @include desktop-md {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $gray;
+        
+    }
+
+    &__tooltip-control {
+        @include bold;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        box-shadow: 2px 4px 10px 0 rgba(0, 13, 84, 0.2);
+        cursor: pointer;
+        &:hover {
+            & > .item-contacts__tooltip-content {
+                visibility: visible;
+                opacity: 1;
+            }
+            &::before {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 18px;
+            left: 2px;
+            border: 8px solid transparent;
+            border-top: 8px solid $white;
+            z-index: 7;
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        }
+    }
+
+    &__tooltip-content {
+        @include regular;
+        position: absolute;
+        bottom: calc(100% + 14px);
+        left: -11px;
+        width: clamp(300px, 50vw, 426px);
+        padding: 10px 20px 18px 20px;
+        font-size: 14px;
+        line-height: 140%;
+        color: $text;
+        border-radius: 10px;
+        background: $white;
+        box-shadow: 2px 4px 10px 0 rgba(0, 13, 84, 0.2);
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        z-index: 1;
+        @include tablet {
+            transform: translateX(-20vw);
+        }
+        @include mobile {
+            transform: translateX(-200px);
+        }
+    }
+
+    &__phone {
+        @include regular;
+        display: block;
+        font-size: clamp(18px, 4vw, 30px);
+        line-height: 140%;
+        color: $text;
+        margin-bottom: 10px;
+        transition: .3s color ease-in-out;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__address {
+        font-style: normal;
+        font-size: clamp(14px, 3vw, 18px);
+        line-height: 140%;
+        color: $text;
+    }
+}
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &__svg {
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        use {
+            fill: $green;
+            transition: .3s fill ease-in-out;
+        }
+        &:hover {
+            use {
+                fill: lighten($green, 10%)
+            }
+        }
+    }
+}

@@ -1,21 +1,21 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Intro Book";
-  src: url("../fonts/../fonts/Intro Book Alt-29ced08636.woff2") format("woff2");
+  src: url("../fonts/../fonts/Intro Book Alt.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal; }
 
 @font-face {
   font-family: "Intro Regular";
-  src: url("../fonts/../fonts/Intro Regular Alt-a5e4b6998d.woff2") format("woff2");
+  src: url("../fonts/../fonts/Intro Regular Alt.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal; }
 
 @font-face {
   font-family: "Intro Bold";
-  src: url("../fonts/../fonts/Intro Bold Alt-0b19797664.woff2") format("woff2");
+  src: url("../fonts/../fonts/Intro Bold Alt.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal; }
@@ -498,16 +498,16 @@ h1, h2, h3, h4, h5, h6 {
   .catalog__open-modal:hover {
     background-size: 45%; }
   .catalog__open-modal_good {
-    background: url("../assets/img/show-3739524468.svg") center center no-repeat, #404b58;
+    background: url("../assets/img/show.svg") center center no-repeat, #404b58;
     background-size: 40%; }
   .catalog__open-modal_cart {
-    background: url("../assets/img/cart-cb076a957f.svg") center center no-repeat, #404b58;
+    background: url("../assets/img/cart.svg") center center no-repeat, #404b58;
     background-size: 40%; }
 
 .catalog__img {
   transition: .3s transform ease-in-out; }
 
-.cards-catalog__btn {
+.catalog__btn {
   width: 200px;
   height: 60px;
   display: block;
@@ -641,7 +641,7 @@ h1, h2, h3, h4, h5, h6 {
 .about {
   color: #ffffff; }
   .about__wrapper {
-    background: url("../assets/img/about-figure-acfed4df7c.svg") top left no-repeat, #484283;
+    background: url("../assets/img/about-figure.svg") top left no-repeat, #484283;
     background-size: 28%; }
     @media (max-width: 767px) {
       .about__wrapper {
@@ -904,7 +904,7 @@ h1, h2, h3, h4, h5, h6 {
       display: block; }
 
 .team {
-  background: url("../assets/img/team-figure-76ad927f64.svg") top right no-repeat, #484283;
+  background: url("../assets/img/team-figure.svg") top right no-repeat, #484283;
   background-size: clamp(100px, 40vw, 550px);
   padding-bottom: 60px; }
   .team__title {
@@ -1314,7 +1314,7 @@ h1, h2, h3, h4, h5, h6 {
   .good__advantages-item:not(:last-child) {
     margin-bottom: 9px; }
   .good__advantages-item::before {
-    content: url("../assets/img/ok-414221092d.svg");
+    content: url("../assets/img/ok.svg");
     margin-right: 11px; }
   .good__characteristics {
     grid-column: span 6; }
@@ -1578,3 +1578,4 @@ h1, h2, h3, h4, h5, h6 {
   .order-accordion__content::-webkit-scrollbar-track {
     background: rgba(77, 77, 77, 0.2);
     border-radius: 4px; }
+/*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@ import { form } from "./form.js";
 import { quizData } from "./quiz.js";
 import { quiz } from "./quiz.js";
 import { accordion } from "./accordion.js";
-import { map } from "./map.js";
+
 import { modal } from "./modal.js";
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
     form();
     quiz(quizData);
     accordion({accordion: '.questions-accordion'});
-    map();
     modal();
     
 })

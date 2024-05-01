@@ -1023,6 +1023,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   modal: () => (/* binding */ modal)
 /* harmony export */ });
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordion.js */ "./src/assets/js/accordion.js");
+/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.js */ "./src/assets/js/map.js");
+
 
 const modal = () => {
   try {
@@ -1038,12 +1040,17 @@ const modal = () => {
         modalOverlay.classList.add('modal-overlay_visible');
         document.querySelector(`[data-target=${modalAttr}]`).classList.add('modal_visible');
         body.classList.add('page__body_scroll-unable');
-        if (modalAttr === 'order') {
-          (0,_accordion_js__WEBPACK_IMPORTED_MODULE_0__.accordion)({
-            accordion: '.order-accordion',
-            maxHeight: 240
-          });
+        switch (modalAttr) {
+          case 'order':
+            (0,_accordion_js__WEBPACK_IMPORTED_MODULE_0__.accordion)({
+              accordion: '.order-accordion',
+              maxHeight: 240
+            });
+            break;
+          case 'map':
+            (0,_map_js__WEBPACK_IMPORTED_MODULE_1__.map)();
         }
+        if (modalAttr === 'order') {}
       });
     });
     modals.forEach(modal => {
@@ -3791,9 +3798,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form.js */ "./src/assets/js/form.js");
 /* harmony import */ var _quiz_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./quiz.js */ "./src/assets/js/quiz.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./src/assets/js/accordion.js");
-/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./map.js */ "./src/assets/js/map.js");
-/* harmony import */ var _modal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal.js */ "./src/assets/js/modal.js");
-
+/* harmony import */ var _modal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modal.js */ "./src/assets/js/modal.js");
 
 
 
@@ -3809,8 +3814,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_accordion_js__WEBPACK_IMPORTED_MODULE_4__.accordion)({
     accordion: '.questions-accordion'
   });
-  (0,_map_js__WEBPACK_IMPORTED_MODULE_5__.map)();
-  (0,_modal_js__WEBPACK_IMPORTED_MODULE_6__.modal)();
+  (0,_modal_js__WEBPACK_IMPORTED_MODULE_5__.modal)();
 });
 })();
 

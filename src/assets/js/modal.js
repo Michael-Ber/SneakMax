@@ -1,4 +1,5 @@
 import { accordion } from "./accordion.js";
+import { map } from "./map.js";
 
 export const modal = () => {
     try {
@@ -17,11 +18,19 @@ export const modal = () => {
                 document.querySelector(`[data-target=${modalAttr}]`).classList.add('modal_visible');
                 body.classList.add('page__body_scroll-unable');
 
+                switch(modalAttr) {
+                    case 'order': 
+                        accordion({
+                            accordion: '.order-accordion',
+                            maxHeight: 240
+                        });
+                        break;
+                    case 'map': 
+                        map();
+                }
+
                 if(modalAttr === 'order') {
-                    accordion({
-                        accordion: '.order-accordion',
-                        maxHeight: 240
-                    })
+                    
                 }
             })
         })

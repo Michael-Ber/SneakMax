@@ -13,15 +13,14 @@
             <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Наша команда</a></li>
             <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Доставка и оплата</a></li>
             <li class="nav__item header__nav-item"><a href="#" class="header__nav-link nav__link">Контакты</a></li>
-            <li class="nav__item header__nav-item header__nav-item_cart">
-                <a href="#" class="header__nav-link header__nav-link_cart nav__link">
-                    <span class="header__nav-name">Корзина</span>
-                    <svg class="header__cart-svg">
-                        <use xlink:href="assets/svg/sprite.svg#cart"></use>
-                      </svg>
-                      <span class="header__cart-amount">1</span>
-                </a>
-                
+            <li class="nav__item header__nav-item header__nav-item_cart" data-modal="cart">
+                <button class="btn-reset header__nav-btn header__nav-btn_cart">
+                  <span class="header__nav-name">Корзина</span>
+                  <svg class="header__cart-svg">
+                    <use xlink:href="assets/svg/sprite.svg#cart"></use>
+                  </svg>
+                  <span class="header__cart-amount">4</span>
+                </button>
             </li>
           </ul>
         </nav>

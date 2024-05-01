@@ -1,0 +1,205 @@
+.good {
+    position: absolute;
+    top: 50px;
+    padding: 0 20px;
+    padding-bottom: 50px;
+
+    &__left {
+        grid-column: 1 / span 6;
+        @include desktop-md {
+            grid-column: 4 / span 6;
+            order: 1;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        @include tablet-sm {
+            max-width: 70%;
+        }
+        @include mobile {
+            max-width: 100%;
+        }
+    }
+
+    &__img-lg {
+        width: 100%;
+        grid-column: 1 / span 6;
+        
+    }
+
+    &__img-sm {
+        width: 100%;
+        grid-column: span 1;
+        
+    }
+
+    &__descr {
+        grid-column: 1 / span 6;
+        @include desktop-md {
+            grid-column: span 12;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column: span 6;
+        padding-right: 90px;
+        @include desktop-md {
+            grid-column: 4 / span 6;
+            padding-right: 0;
+            order: 3;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+    &__bottom {
+        padding-top: 20px;
+        grid-column: span 12;
+        @include desktop-md {
+            grid-column: 4 / span 6;
+            order: 2;
+        }
+        @include tablet-sm {
+            grid-column: span 4;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 47px;
+        margin-bottom: 40px;
+        @include mobile {
+            gap: 20px;
+        }
+    }
+
+    &__amount {
+        color: $text;
+    }
+
+    &__title {
+        font-size: clamp(16px, 4vw, 24px);
+        line-height: 140%;
+        color: $text;
+        padding-bottom: 20px;
+    }
+
+    &__stars {
+        margin-bottom: 20px;
+    }
+
+    &__svg-star {
+        width: 20px;
+        height: 20px;
+        use {
+            fill: $orange
+        }
+    }
+
+    &__choose-form {
+        margin-bottom: 20px;
+    }
+
+    &__choose-title {
+        display: block;
+        color: $text;
+        padding-bottom: 20px;
+    }
+
+    &__choose-sizes {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    &__choose-size {
+        font-size: 14px;
+        color: $text;
+        width: 70px;
+        height: 32px;
+        max-width: 70px;
+        background: $white;
+        border: 1px solid $gray;
+        border-radius: 4px;
+        padding: 10px 24px;
+    }
+
+    &__order {
+        width: 100%;
+        height: 60px;
+        
+    }
+
+    &__advantages-list {
+        font-size: 14px;
+        color: $gray;
+    }
+
+    &__advantages-item {
+        &:not(:last-child) {
+            margin-bottom: 9px;
+        }
+        &::before {
+            content: url('../assets/img/ok.svg');
+            margin-right: 11px;
+        }
+    }
+
+    &__characteristics {
+        grid-column: span 6;
+        @include desktop-md {
+            grid-column: span 12;
+        }
+    }
+}
+.descr-good {
+
+    &__title {
+        font-size: clamp(16px, 4vw, 24px);
+        color: $text;
+        padding-bottom: 20px;
+    }
+
+    &__text {
+        font-size: clamp(14px, 5vw, 16px);
+        line-height: 140%;
+        color: $text;
+        margin: 0;
+    }
+}
+
+.good-costs {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 50px;
+    &__new {
+        font-weight: 700;
+        color: $text;
+        font-size: clamp(20px, 4vw, 30px);
+    }
+
+    &__old {
+        font-size: clamp(14px, 4vw, 16px);
+        color: $gray;
+    }
+}
+
+.good-container {
+    max-width: 1140px;
+    padding: 40px;
+    margin: 0 auto;
+    background: $white;
+}

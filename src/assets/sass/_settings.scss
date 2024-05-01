@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
     background: $white;
     color: $text;
     font-weight: 400;
+    overflow-y: auto;
+    &_scroll-unable {
+        overflow-y: hidden;
+    }
 }
 
 .site-container {
@@ -186,9 +190,18 @@ h1, h2, h3, h4, h5, h6 {
             transform: rotate(45deg);
         }
     }
+    .arrow-svg {
+        &_active {
+            transform: rotate(180deg);
+        }
+    }
 }
 
 .icon-marker {
     min-width: 25px;
     min-height: 35px;
+}
+
+.gray-text {
+    color: $gray;
 }

@@ -43,15 +43,6 @@ export const map = () => {
         });
     }
 
-    const mapImg = document.querySelector('.contacts__map');
-    const modal = document.querySelector('.modal-overlay');
-    mapImg.addEventListener('click', () => {
-        modal.classList.add('modal-overlay_visible')
-    })
-    window.addEventListener('click', (e) => {
-        if(e.target.classList.contains('modal-overlay')) {
-            modal.classList.remove('modal-overlay_visible')
-        }
-    })
+    
 }
 

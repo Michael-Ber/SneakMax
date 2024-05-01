@@ -1,6 +1,206 @@
-<div class="modal">
+<div class="modals">
     <div class="modal-overlay">
-        <div class="modal__map" id="map">
+        <div class="modal modal_map" id="map" data-target="map">
+        </div>
+        <div class="modal modal_good good" id="good" data-target="good">
+            <div class="modal-close">&#10005;</div>
+            <div class="good-container grid">
+                <div class="good__left">
+                    <div class="good__images">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma.webp" class="good__img-lg" width="520" height="461" alt="Женские кроссовки Puma Force 1 Shadow">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="good__img-sm" width="70" height="76" alt="Женские кроссовки Puma Force 1 Shadow с разного ракурса">
+                    </div>
+                    
+                </div>
+                <div class="good__right">
+                    <div class="good__top">
+                        <div class="good__part-number gray-text">
+                            Артикул:
+                            <span class="good__code">879876</span>
+                        </div>
+                        <div class="good__instock gray-text">
+                            В наличии:
+                            <span class="good__amount">13 шт</span>
+                        </div>
+                    </div>
+                    <h2 class="good__title">Женские кроссовки Puma Force 1 Shadow</h2>
+                    <div class="good__stars">
+                        <svg class="good__svg-star">
+                          <use xlink:href="assets/svg/sprite.svg#star"></use>
+                        </svg>
+                        <svg class="good__svg-star">
+                          <use xlink:href="assets/svg/sprite.svg#star"></use>
+                        </svg>
+                        <svg class="good__svg-star">
+                          <use xlink:href="assets/svg/sprite.svg#star"></use>
+                        </svg>
+                        <svg class="good__svg-star">
+                          <use xlink:href="assets/svg/sprite.svg#star"></use>
+                        </svg>
+                        <svg class="good__svg-star">
+                          <use xlink:href="assets/svg/sprite.svg#star"></use>
+                        </svg>
+                    </div>
+                    <form action="#" class="good__choose-form">
+                        <span class="good__choose-title">Выберите размер</span>
+                        <div class="good__choose-sizes">
+                            <input type="text" value="36" readonly placeholder="36" name="36" class="good__choose-size">
+                            <input type="text" value="37" readonly placeholder="37" name="37" class="good__choose-size">
+                            <input type="text" value="38" readonly placeholder="38" name="38" class="good__choose-size">
+                            <input type="text" value="39" readonly placeholder="39" name="39" class="good__choose-size">
+                            <input type="text" value="40" readonly placeholder="40" name="40" class="good__choose-size">
+                        </div>
+                        <div class="good-costs">
+                            <div class="good-costs__new">19 789</div>
+                            <div class="good-costs__old">20 578</div>
+                        </div>
+                        <button class="btn-reset btn btn_orange good__order">Заказать</button>
+                    </form>
+                    <ul class="list-reset good__advantages-list">
+                        <li class="good__advantages-item">Бесплатная доставка до двери</li>
+                        <li class="good__advantages-item">Оплата заказа при получении</li>
+                        <li class="good__advantages-item">Обмен в течении двух недель</li>
+                    </ul>
+                    
+                </div>
+                <div class="good__bottom grid">
+                    <div class="good__descr descr-good">
+                        <h3 class="descr-good__title">Описание</h3>
+                        <p class="descr-good__text">Кроссовки Nike Blazer Mid '77 Vintage Suede с винтажной подошвой возрождают стиль баскетбольных моделей Nike прошлого, создавая впечатление, что они хранились в шкафу долгие годы. </p>
+                    </div>
+                    <div class="good__characteristics descr-good characteristics-good">
+                        <h3 class="characteristics-good__title descr-good__title">Характеристики</h3> 
+                        <div class="characteristics-good__gender">
+                            Пол: <span class="characteristics-good__gender-value">Мужской</span>
+                        </div>
+                        <div class="characteristics-good__color">
+                            Цвета: <span class="characteristics-good__color-value">Разноцветный</span>
+                        </div>
+                        <div class="characteristics-good__makeup">
+                            Состав: <span class="characteristics-good__makeup-value">Кожа, текстиль, резина</span>
+                        </div>
+                        <div class="characteristics-good__country">
+                            Страна: <span class="characteristics-good__country-value">Вьетнам</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal_cart cart" id="cart" data-target="cart">
+            <div class="modal-close">&#10005;</div>
+            <div class="cart__container">
+                <ul class="list-reset cart__list">
+                    <li class="cart__item item-cart">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                        <div class="item-cart__descr">
+                            <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                            <span class="item-cart__cost"><span class="item-cart__cost-value">8 678</span> ₽</span>
+                        </div>
+                        <img loading="lazy" src="./assets/img/trash.svg" class="item-cart__svg" width="20" height="20" alt="Удалить из корзины">
+                    </li>
+                    <li class="cart__item item-cart">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                        <div class="item-cart__descr">
+                            <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                            <span class="item-cart__cost"><span class="item-cart__cost-value">8 921</span> ₽</span>
+                        </div>
+                        <img loading="lazy" src="./assets/img/trash.svg" class="item-cart__svg" width="20" height="20" alt="Удалить из корзины">
+                    </li>
+                    <li class="cart__item item-cart">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                        <div class="item-cart__descr">
+                            <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                            <span class="item-cart__cost"><span class="item-cart__cost-value">8 769</span> ₽</span>
+                        </div>
+                        <img loading="lazy" src="./assets/img/trash.svg" class="item-cart__svg" width="20" height="20" alt="Удалить из корзины">
+                    </li>
+                    <li class="cart__item item-cart">
+                        <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                        <div class="item-cart__descr">
+                            <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                            <span class="item-cart__cost"><span class="item-cart__cost-value">8 435</span> ₽</span>
+                        </div>
+                        <img loading="lazy" src="./assets/img/trash.svg" class="item-cart__svg" width="20" height="20" alt="Удалить из корзины">
+                    </li>
+                </ul>
+                <div class="cart__footer">
+                    <div class="cart__sum">
+                        <span class="cart__sum-title">Итого:</span>
+                        <span class="cart__sum-value">25 789</span>
+                    </div>
+                    <button class="cart__offer btn btn-reset btn_orange" data-modal="order">К оформлению</и>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal_order order" id="order" data-target="order">
+            <div class="modal-close">&#10005;</div>
+            <div class="order__container">
+                <div class="order__top">
+                    <h2 class="order__title">Оформление заказа</h2>
+                    <h3 class="order__number">Заказ 3456 67</h3>
+                </div>
+                <form action="#" class="order__form">
+                    <div class="order__goods goods-order">
+                        <div class="goods-order__amount amount-goods goods-row">
+                            <span class="amount-goods__title goods-row__title">Товаров в заказе:</span>
+                            <span class="amount-goods__value goods-row__value">3 шт</span>
+                        </div>
+                        <div class="goods-order__sum sum-goods goods-row">
+                            <span class="amount-sum__title goods-row__title">Товаров в заказе:</span>
+                            <span class="amount-sum__value goods-row__value">3 шт</span>
+                        </div>
+                        <div class="accordion order-accordion">
+                            <div class="accordion__item accordion__item_active order-accordion__item">
+                                <button class="btn-reset accordion__control order-accordion__control" aria-expanded="false">
+                                    Состав заказа
+                                    <svg class="order__svg arrow-svg">
+                                      <use xlink:href="assets/svg/sprite.svg#arrow-down"></use>
+                                    </svg>
+                                </button>
+                                <div class="accordion__content order-accordion__content" aria-hidden="true">
+                                    <ul class="list-reset order__list">
+                                        <li class="order__item item-cart">
+                                            <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                                            <div class="item-cart__descr order__item-descr">
+                                                <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                                                <span class="item-cart__cost"><span class="item-cart__cost-value">190 789</span> ₽</span>
+                                            </div>
+                                            <button class="btn-reset btn order__remove">Удалить</button>
+                                        </li>
+                                        <li class="order__item item-cart">
+                                            <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                                            <div class="item-cart__descr order__item-descr">
+                                                <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                                                <span class="item-cart__cost"><span class="item-cart__cost-value">190 789</span> ₽</span>
+                                            </div>
+                                            <button class="btn-reset btn order__remove">Удалить</button>
+                                        </li>
+                                        <li class="order__item item-cart">
+                                            <img loading="lazy" src="./assets/img/webp/sneakers-puma-sm.webp" class="item-cart__img" width="100" height="57" alt="Женские кроссовки Puma Force 1 Shadow">
+                                            <div class="item-cart__descr order__item-descr">
+                                                <h4 class="item-cart__title">Женские кроссовки Puma Force 1 Shadow</h4>
+                                                <span class="item-cart__cost"><span class="item-cart__cost-value">190 789</span> ₽</span>
+                                            </div>
+                                            <button class="btn-reset btn order__remove">Удалить</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order__inputs">
+                        <input type="text" name="name" required placeholder="Ваше имя" class="input-reset order__input">
+                        <input type="tel" name="phone" required placeholder="Номер телефона" class="input-reset order__input">
+                        <input type="email" name="email" required placeholder="E-mail" class="input-reset order__input">
+                    </div>
+                    <button type="submit" class="btn-reset btn btn_orange order__submit">Оформить заказ</button>
+                </form>
+            </div>
         </div>
     </div>
 

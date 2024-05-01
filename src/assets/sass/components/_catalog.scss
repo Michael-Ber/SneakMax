@@ -64,7 +64,15 @@
     }
 
     &__card {
+        position: relative;
         justify-self: center;
+        &:hover {
+            & > .catalog__view {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        cursor: pointer;
     }
 
 
@@ -79,6 +87,44 @@
     &__card-cost {
         @include regular;
         font-size: 20px;
+    }
+
+    &__view {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+    }
+
+    &__open-modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        transition: .1s background-size ease-in-out;
+        &:hover {
+            background-size: 45%;
+        }
+        &_good {
+            background: url('../assets/img/show.svg') center center no-repeat, $text;
+            background-size: 40%;
+        }
+        &_cart {
+            background: url('../assets/img/cart.svg') center center no-repeat, $text;
+            background-size: 40%;
+        }
+    }
+
+    &__img {
+        transition: .3s transform ease-in-out;
     }
 }
 

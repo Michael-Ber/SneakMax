@@ -5,12 +5,15 @@ import { quizData } from "./quiz.js";
 import { quiz } from "./quiz.js";
 import { accordion } from "./accordion.js";
 import { map } from "./map.js";
+import { modal } from "./modal.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     burger();
     rangeSlider();
     form();
     quiz(quizData);
-    accordion();
+    accordion({accordion: '.questions-accordion'});
     map();
+    modal();
+    
 })

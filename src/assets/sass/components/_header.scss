@@ -38,7 +38,7 @@
     }
 
     &__nav-item {
-        
+        cursor: pointer;
         @include desktop-md {
             display: none;
         }
@@ -49,7 +49,13 @@
         }
     }
 
-    &__nav-link {
+    &__nav-btn {
+        background: transparent;
+        color: $white;
+        transition: .3s color ease-in-out;
+        &:hover {
+            color: $orange;
+        }
         &_cart {
             position: relative;
             display: flex;

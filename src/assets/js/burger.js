@@ -15,23 +15,23 @@ export const burger = () => {
                 burgerBtn.setAttribute('aria-expanded', false);
             }
             if(!menu.classList.contains('burger__menu_active')) {
-                body.style.overflow = 'auto';
+                body.classList.remove('page__body_scroll-unable');
                 menu.setAttribute('aria-hidden', true)
             }else {
                 menu.setAttribute('aria-hidden', false)
-                body.style.overflow = 'hidden';
+                body.classList.add('page__body_scroll-unable');
             }
         })
         window.addEventListener('resize', () => {
             menu.classList.remove('burger__menu_active');
             burgerBtn.classList.remove('burger__btn_active');
-            body.style.overflow = 'auto';
+            body.classList.remove('page__body_scroll-unable');
         })
         window.addEventListener('scroll', () => {
             if(menu.classList.contains('burger__menu_active')) {
-                body.style.overflow = 'hidden';
+                body.classList.add('page__body_scroll-unable');
             }else {
-                body.style.overflow = 'auto';
+                body.classList.remove('page__body_scroll-unable');
             }
         })
         links.forEach(item => {

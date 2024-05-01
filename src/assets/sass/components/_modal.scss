@@ -1,5 +1,10 @@
+
 .modal {
-    &__map {
+    display: none;
+    &_visible {
+        display: block;
+    }
+    &_map {
         width: clamp(300px, 40vw, 800px);
         height: clamp(300px, 20vw, 600px);
     }
@@ -15,10 +20,10 @@
     align-items: center;
     background: rgba(24, 24, 27, .7);
     z-index: 100;
+    overflow-y: scroll;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
-    overflow-y: scroll;
+    transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
     &_visible {
         opacity: 1;
         visibility: visible;

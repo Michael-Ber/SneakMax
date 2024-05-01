@@ -53,7 +53,6 @@
     "normalize.css": "^8.0.1",
     "nouislider": "^15.7.1",
     "sass-loader": "^14.1.1",
-    "style-loader": "^3.3.4",
-    "swiper": "^11.0.5"
+    "style-loader": "^3.3.4"
   }
 }

@@ -205,3 +205,25 @@ h1, h2, h3, h4, h5, h6 {
 .gray-text {
     color: $gray;
 }
+
+[animate] {
+    opacity: 0;
+    transition: .8s opacity ease, .8s transform ease;
+}
+[animate-x-toleft] {
+    transform: translateX(100%);
+}
+[animate-x-toright] {
+    transform: translateX(-100%);
+}
+[animate-y] {
+    transform: translateY(100%);
+}
+[animate-y-active] {
+    opacity: 1;
+    transform: translateY(0);
+}
+[animate-x-active] {
+    opacity: 1;
+    transform: translateX(0);
+}

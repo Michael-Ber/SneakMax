@@ -197,12 +197,6 @@ export const quiz = (data) => {
     })
 
     const collectData = (fields) => {
-        // const formData = new FormData();
-        // fields.forEach(field => {
-        //     if(field.type === 'checkbox' && field.checked) {
-        //         formData.append("type", field.name)
-        //     }
-        // })
         let temp = [];
         fields.forEach((field, i) => {
             if(field.type === 'checkbox' && field.checked) {

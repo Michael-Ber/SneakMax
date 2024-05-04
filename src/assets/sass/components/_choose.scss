@@ -116,8 +116,8 @@
 
 
     &__next {
-        width: 211px;
-        height: 50px;
+        padding: 16px 39px;
+        max-width: 211px;
         border: 1px solid $text;
         background: none;
         transition: .3s border ease;
@@ -190,14 +190,20 @@
         &::placeholder {
             color: $gray;
         }
+        @include mobile {
+            width: 100%;
+        }
     }
     &__subtitle {
         font-size: clamp(14px, 2vw, 18px);
         line-height: 140%;
     }
     &__btn {
-        width: clamp(140px, 40vw, 220px);
-        height: 60px;
+        padding: 21px 21px;
+        min-width: clamp(140px, 40vw, 220px);
+        @include mobile {
+            min-width: 100%;
+        }
     }
 
     &__success{

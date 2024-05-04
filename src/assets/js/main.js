@@ -6,6 +6,7 @@ import { quiz } from "./quiz.js";
 import { accordion } from "./accordion.js";
 
 import { modal } from "./modal.js";
+import { elementAnimation } from "./elementAnimation.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     burger();
@@ -14,5 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
     quiz(quizData);
     accordion({accordion: '.questions-accordion'});
     modal();
-    
+    elementAnimation();
 })
